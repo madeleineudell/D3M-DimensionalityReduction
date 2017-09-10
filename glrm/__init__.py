@@ -86,7 +86,7 @@ class glrm:
 
 
 class pca(glrm):
-    def check_success(): #may not needed
+    def check_success(): #may not needed; just to make sure this class is not empty so that it can be correctly defined
         return 0
 
 
