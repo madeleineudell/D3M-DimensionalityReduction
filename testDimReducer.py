@@ -3,6 +3,7 @@ This file implements a test for dimensionality reduction methods.
 A method that complies with the dimensionality reduction API will pass this test.
 """
 import numpy as np
+import sys
 
 """
 test_dim_reducer: tests dimensionality reduction method
@@ -22,14 +23,16 @@ def test_dim_reducer(MyDimReducer):
     k = 2
 
     try:
-        # dimensionality reduction method implemented
-        W = MyDimReducer.dimension_reduce(A, k)
-        # W has n rows and k columns
-        W[n-1,k-1]
+        # dimensionality reduction methods implemented
+        W = MyDimReducer.fit_transform(A, k)
+        W[n-1,k-1] # W has n rows and k columns
+        MyDimReducer.fit(A, k)
+        W = MyDimReducer.predict(A)
+        W[n-1,k-1] # W has n rows and k columns
         # MyDimReducer has an output map
-        hasattr(MyDimReducer, "output_map")
-        hasattr(MyDimReducer, "is_dimensionality_reduction")
-        assert isinstance(MyDimReducer.is_dimensionality_reduction, bool)
+        hasattr(MyDimReducer, "predict")
+        hasattr(MyDimReducer, "is_feature_selection")
+        assert isinstance(MyDimReducer.is_feature_selection, bool)
         hasattr(MyDimReducer, "hyperparameters")
         assert isinstance(MyDimReducer.hyperparameters, dict)
 
