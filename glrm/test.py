@@ -13,8 +13,8 @@ if __name__ == "__main__":
     A = np.arange(n*d).reshape(n, d)
     k = 2
     
-#    g = glrm() #PCA
-    g = pca() #PCA
+    g = glrm() #PCA
+#    g = pca() #PCA
 #    g = nnmf() #NNMF
 #    g = rpca() #RPCA
 

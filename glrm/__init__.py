@@ -45,9 +45,7 @@ class glrm:
         self.losses = losses
         self.rx = rx
         self.ry = ry
-        
-
-    self.hyperparameters = {'losses':losses, 'rx':rx, 'ry':ry}
+        self.hyperparameters = {'losses':losses, 'rx':rx, 'ry':ry}
 
 
     def dimension_reduce(self, A, k):
@@ -95,6 +93,7 @@ class nnmf(glrm):
         self.losses = losses
         self.rx = rx
         self.ry = ry
+        self.hyperparameters = {'losses':losses, 'rx':rx, 'ry':ry}
 
 
 class rpca(glrm):
@@ -103,6 +102,7 @@ class rpca(glrm):
         self.losses = losses
         self.rx = rx
         self.ry = ry
+        self.hyperparameters = {'losses':losses, 'rx':rx, 'ry':ry}
 
 
 
